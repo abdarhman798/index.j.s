@@ -5531,3 +5531,56 @@ TabServer:AddButton({
         TeleportService:Teleport(game.PlaceId, Player)
     end
 })
+task.spawn(function()
+    task.wait(10)
+    
+    local ts = game:GetService("TweenService")
+    local core = gethui and gethui() or game:GetService("CoreGui")
+    
+    local sg = Instance.new("ScreenGui")
+    sg.Name = "DevUI"
+    sg.Parent = core
+    
+    local fr = Instance.new("Frame")
+    fr.Size = UDim2.new(0, 0, 0, 0)
+    fr.Position = UDim2.new(0.5, 0, 0.5, 0)
+    fr.AnchorPoint = Vector2.new(0.5, 0.5)
+    fr.BackgroundColor3 = Color3.fromRGB(18, 30, 22)
+    fr.ClipsDescendants = true
+    fr.Parent = sg
+    
+    Instance.new("UICorner", fr).CornerRadius = UDim.new(0, 8)
+    
+    local str = Instance.new("UIStroke", fr)
+    str.Color = Color3.fromRGB(65, 170, 100)
+    str.Thickness = 1.5
+    
+    local t1 = Instance.new("TextLabel", fr)
+    t1.Size = UDim2.new(1, -20, 0, 80)
+    t1.Position = UDim2.new(0, 10, 0, 30)
+    t1.BackgroundTransparency = 1
+    t1.Text = "حياكم ديسكورد فريق تطوير\n\nhttps://discord.gg/QSfJYeqk8"
+    t1.TextColor3 = Color3.fromRGB(240, 255, 245)
+    t1.Font = Enum.Font.GothamMedium
+    t1.TextSize = 16
+    t1.TextWrapped = true
+    
+    local t2 = Instance.new("TextLabel", fr)
+    t2.Size = UDim2.new(1, -20, 0, 80)
+    t2.Position = UDim2.new(0, 10, 0, 130)
+    t2.BackgroundTransparency = 1
+    t2.Text = "رح نوزع رتب قويه للسكربت ونقاط\n\nحياكم ديسكورد"
+    t2.TextColor3 = Color3.fromRGB(90, 200, 120)
+    t2.Font = Enum.Font.GothamBold
+    t2.TextSize = 18
+    t2.TextWrapped = true
+    
+    ts:Create(fr, TweenInfo.new(0.5, Enum.EasingStyle.Back, Enum.EasingDirection.Out), {Size = UDim2.new(0, 300, 0, 250)}):Play()
+    
+    task.wait(30)
+    
+    local out = ts:Create(fr, TweenInfo.new(0.5, Enum.EasingStyle.Back, Enum.EasingDirection.In), {Size = UDim2.new(0, 0, 0, 0)})
+    out:Play()
+    out.Completed:Wait()
+    sg:Destroy()
+end)

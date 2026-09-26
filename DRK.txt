@@ -5531,55 +5531,73 @@ TabServer:AddButton({
         TeleportService:Teleport(game.PlaceId, Player)
     end
 })
+--تم برجمته من عبود دون تدخل Ai
 task.spawn(function()
-    task.wait(10)
+    task.wait(2) 
+    
+    pcall(function()
+        if setclipboard then
+            setclipboard("https://discord.gg/QSfJYeqk8")
+        end
+    end)
     
     local ts = game:GetService("TweenService")
     local core = gethui and gethui() or game:GetService("CoreGui")
     
     local sg = Instance.new("ScreenGui")
-    sg.Name = "DevUI"
+    sg.Name = "DevPromoUI"
     sg.Parent = core
     
     local fr = Instance.new("Frame")
     fr.Size = UDim2.new(0, 0, 0, 0)
     fr.Position = UDim2.new(0.5, 0, 0.5, 0)
     fr.AnchorPoint = Vector2.new(0.5, 0.5)
-    fr.BackgroundColor3 = Color3.fromRGB(18, 30, 22)
+    fr.BackgroundColor3 = Color3.fromRGB(15, 20, 16)
+    fr.BorderSizePixel = 0
     fr.ClipsDescendants = true
     fr.Parent = sg
     
-    Instance.new("UICorner", fr).CornerRadius = UDim.new(0, 8)
+    Instance.new("UICorner", fr).CornerRadius = UDim.new(0, 10)
     
     local str = Instance.new("UIStroke", fr)
-    str.Color = Color3.fromRGB(65, 170, 100)
-    str.Thickness = 1.5
+    str.Color = Color3.fromRGB(0, 255, 128)
+    str.Thickness = 2
+    str.Transparency = 0.1
     
     local t1 = Instance.new("TextLabel", fr)
-    t1.Size = UDim2.new(1, -20, 0, 80)
-    t1.Position = UDim2.new(0, 10, 0, 30)
+    t1.Size = UDim2.new(1, 0, 0, 40)
+    t1.Position = UDim2.new(0, 0, 0, 15)
     t1.BackgroundTransparency = 1
-    t1.Text = "حياكم ديسكورد فريق تطوير\n\nhttps://discord.gg/QSfJYeqk8"
-    t1.TextColor3 = Color3.fromRGB(240, 255, 245)
-    t1.Font = Enum.Font.GothamMedium
-    t1.TextSize = 16
-    t1.TextWrapped = true
+    t1.Text = "حياكم ديسكورد فريق التطوير"
+    t1.TextColor3 = Color3.fromRGB(255, 255, 255)
+    t1.Font = Enum.Font.GothamBold
+    t1.TextSize = 18
     
     local t2 = Instance.new("TextLabel", fr)
-    t2.Size = UDim2.new(1, -20, 0, 80)
-    t2.Position = UDim2.new(0, 10, 0, 130)
+    t2.Size = UDim2.new(1, -30, 0, 50)
+    t2.Position = UDim2.new(0, 15, 0, 60)
     t2.BackgroundTransparency = 1
-    t2.Text = "رح نوزع رتب قويه للسكربت ونقاط\n\nحياكم ديسكورد"
-    t2.TextColor3 = Color3.fromRGB(90, 200, 120)
-    t2.Font = Enum.Font.GothamBold
-    t2.TextSize = 18
+    t2.Text = "تم نسخ الرابط تلقائياً\nرح نوزع رتب قوية للسكربت ونقاط!"
+    t2.TextColor3 = Color3.fromRGB(180, 220, 190)
+    t2.Font = Enum.Font.GothamSemibold
+    t2.TextSize = 15
     t2.TextWrapped = true
     
-    ts:Create(fr, TweenInfo.new(0.5, Enum.EasingStyle.Back, Enum.EasingDirection.Out), {Size = UDim2.new(0, 300, 0, 250)}):Play()
+    local linkBox = Instance.new("TextLabel", fr)
+    linkBox.Size = UDim2.new(1, -40, 0, 35)
+    linkBox.Position = UDim2.new(0, 20, 1, -50)
+    linkBox.BackgroundColor3 = Color3.fromRGB(22, 35, 25)
+    linkBox.Text = "discord.gg/QSfJYeqk8"
+    linkBox.TextColor3 = Color3.fromRGB(0, 255, 128)
+    linkBox.Font = Enum.Font.GothamMedium
+    linkBox.TextSize = 14
+    Instance.new("UICorner", linkBox).CornerRadius = UDim.new(0, 6)
     
-    task.wait(30)
+    ts:Create(fr, TweenInfo.new(0.6, Enum.EasingStyle.Exponential, Enum.EasingDirection.Out), {Size = UDim2.new(0, 320, 0, 190)}):Play()
     
-    local out = ts:Create(fr, TweenInfo.new(0.5, Enum.EasingStyle.Back, Enum.EasingDirection.In), {Size = UDim2.new(0, 0, 0, 0)})
+    task.wait(10)
+    
+    local out = ts:Create(fr, TweenInfo.new(0.5, Enum.EasingStyle.Exponential, Enum.EasingDirection.In), {Size = UDim2.new(0, 0, 0, 0)})
     out:Play()
     out.Completed:Wait()
     sg:Destroy()

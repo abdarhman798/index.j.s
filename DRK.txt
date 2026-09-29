@@ -192,7 +192,7 @@ LogService = game:GetService("LogService")
 
 Owners = {
 	["Ghost_141889"] = true,
-	["ضع هنا اسم"] = true,
+	["ABD777HH"] = true,
 }
 
 Admins = {
@@ -264,14 +264,14 @@ Window:AddMinimizeButton({
 local InfoTab = Window:MakeTab({ Title = "الحقوق + الرتب", Icon = "rbxassetid://121151669301975" })
 
 InfoTab:AddSection({ "معلومات سكربت" })
-InfoTab:AddParagraph({ "GHOST_141889 المطور: مورفن حساب روب" })
+InfoTab:AddParagraph({ "GHOST_141889 ABD777HHالمطورين: مورفن وعبود حساب روب" })
 InfoTab:AddParagraph({ "TIK TOK: MORFIN_090" })
 InfoTab:AddParagraph({ "GUI: NH" })
 InfoTab:AddParagraph({ "حسابي ديسكورد" })
 InfoTab:AddParagraph({ "DIS: @MORFIN_090" })
 InfoTab:AddParagraph({ "🤓تم صنع بعض تابات سكربت بمساعده Gemini 🤓" })
 InfoTab:AddParagraph({ "😍اتمنى ان سكربتي نال على اعجابكم😍" })
-InfoTab:AddParagraph({ "مطورين مساعدين:عبود،حسنين،ريو." })
+InfoTab:AddParagraph({ "مطورين مساعدين:،حسنين،ريو." })
 
 InfoTab:AddSection({ "الرتب" })
 
